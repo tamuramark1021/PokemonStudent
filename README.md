@@ -15,6 +15,3 @@ The goal of this assignment is to use the JSON object in the pokemon.js file to 
  * Using bootstrap, create the following card layout
  * Use may use this [link](https://hackerthemes.com/bootstrap-cheatsheet/) as a reference
 
-## Day Two
-
-We will replace the given JSON object with the result from the pokemon API
