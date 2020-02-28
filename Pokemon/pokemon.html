@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="pokemon.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            for(var i=1;i<900;i++){
+                $('.pokeImgs').append("<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + i + ".png' alt='' id = '" + i + "' />")
+            }
+            $('img').click(function(){
+               var id=$(this).attr("id");
+               $.get("https://pokeapi.co/api/v2/pokemon/" + id, function(response){
+                    //console.log(response);
+                    var output = "";
+                    output +="<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id + ".png' alt='' />";
+                    output +="<h3>" + 'name: ' + response["name"] + "</h3>";
+                    output +="<h4>" + 'height: ' + response["height"] + "</h4>";
+                    output +="<h4>" + 'weight: ' + response["weight"] + "</h4>";
+                    output +="<p>Moves";
+                    output +="<ul>";
+                        for(var i =0; i<response["moves"].length; i++){
+                            output+="<li>" + response["moves"][i]["move"]["name"] + "</li>"
+                        };
+                    output+="</ul></p>";
+                    $("#pokestats").html(output);
+                    },"json");
+                });
+
+
+                // let pokemonName = $('input').val();
+                // //console.log(pokemonName)
+
+
+
+                // $.get('https://pokeapi.co/api/v2/pokemon/'+pokemonName+'/', function(
+                //     data
+                // ) {
+                //     //console.log(`This is the response:`);
+                //     //console.log(data);
+
+                //     //console.log(data['name']);
+                //     //console.log(data['stats'][0]['stat']['name']);
+                //     //console.log(data.stats[0].stat.name);
+
+                //     //console.log(data['sprites']['front_default']);
+
+                //     $('h1').html(data['name']);
+                //     $('h4').html(data['stats'][0]['stat']['name']);
+                //     $('img').attr('src', data['sprites']['front_default']);
+                // });
+
+            });
+    </script>
+</head>
+<body>
+    <div><h1>My Pokedex!!</h1></div>
+    <div class="container">
+    
+        <div class="pokeImgs"></div>
+        <div id="pokestats"></div>
+        <h4></h4>
+    <img src="" alt="">
+</div>
+    
+</body>
+</html>

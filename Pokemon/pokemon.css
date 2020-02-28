@@ -1,0 +1,44 @@
+*{
+    /* border: dotted 1px red; */
+    width: auto;
+}
+body, html{
+    height: 700px;
+    display: inline-block;
+    width: 100%;
+    background-color: #33ADFF;
+}
+h3{
+    display: inline-block;
+    justify-content: center;
+
+}
+.img div{
+    display:flex;
+    justify-content:center;
+    height: 40px;
+    width: 40px;}
+
+#pokestats{
+    display: table-column;
+    justify-self: flex-end;
+    width: 40%;
+    height: 500px;
+    color: blanchedalmond;
+
+    
+}
+h1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: blanchedalmond;
+}
+.container{
+    display: inline-flex;
+    width: 100%;
+
+}
+.pokeImgs{
+    max-width: 1000px;
+}
